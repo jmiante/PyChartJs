@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<canvas id="myChart"></canvas>
+
+<script>
+    var data = {{ chartJSON | safe }}
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, data);
+</script>
+  
+{% endblock %}
